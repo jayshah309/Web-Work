@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ketos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+    body {
+        padding-bottom: 20px;
+        color: #5a5a5a;
+        /* font: 400 15px/1.8 Lato, sans-serif;*/
+        /*color: #777;*/
+    }
+    .featurette-divider {
+        /*  margin: 80px 0; */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .featurette-heading {
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+    
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .contact h3 {
+        margin: 10px 0 30px 0;
+        letter-spacing: 5px;
+        font-size: 24px;
+        color: #111;
+    }
+    
+    h2,
+    h3,
+    h4 {
+        margin: 10px 0 30px 0;
+        letter-spacing: 10px;
+        font-size: 24px;
+        color: #111;
+    }
+    
+    .container {
+        padding: 80px 120px;
+    }
+    
+    .contact {
+        padding: 100px 140px;
+    }
+    
+    .person {
+        border: 10px solid transparent;
+        margin-bottom: 25px;
+        width: 80%;
+        height: 80%;
+        opacity: 0.7;
+    }
+    
+    .person:hover {
+        border-color: #f1f1f1;
+    }
+    
+    .carousel-inner img {
+        -webkit-filter: grayscale(60%);
+        filter: grayscale(60%);
+        /* make all photos black and white */
+        width: 100%;
+        /* Set width to 100% */
+        margin: auto;
+    }
+    
+    .carousel-caption h2 {
+        color: #fff;
+    }
+    
+    @media (min-height: 600px) {
+        .jumbotron {
+            height: 100vh;
+        }
+    }
+    
+    .jumbotron {
+        background-image: url("https://images.unsplash.com/photo-1444124746228-e0356266964d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=61963732c3d6d3c999d56f1fea091f27");
+        background-size: cover;
+    }
+    
+    .nav-tabs li a {
+        color: #777;
+    }
+    
+    #googleMap {
+        width: 100%;
+        height: 400px;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    
+    .navbar {
+        font-family: Montserrat, sans-serif;
+        margin-bottom: 0;
+        background-color: #2d2d30;
+        border: 0;
+        font-size: 11px !important;
+        letter-spacing: 4px;
+        opacity: 0.9;
+    }
+    
+    .navbar li a,
+    .navbar .navbar-brand {
+        color: #d5d5d5 !important;
+    }
+    
+    .navbar-nav li a:hover {
+        color: #fff !important;
+    }
+    
+    .navbar-nav li.active a {
+        color: #fff !important;
+        background-color: #29292c !important;
+    }
+    
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+    }
+    
+    .contact {
+        background-image: url("https://images.unsplash.com/photo-1436262513933-a0b06755c784?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0b6cf0f2bd64f9788f12b2b43c959c11");
+        background-size: cover;
+        -webkit-filter: grayscale(30%);
+        filter: grayscale(30%);
+    }
+    
+    .panel {
+        border: 1px solid #2d2d30;
+        border-radius: 0;
+        transition: box-shadow 0.5s;
+    }
+    
+    .panel:hover {
+        box-shadow: 5px 0px 40px rgba(0, 0, 0, 1);
+    }
+
+   .panel-heading {
+    color: #fff !important;
+    background-color: #555 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+    
+    .c {
+        min-height: 100vh;
+    }
+    
+    .team2 {
+        min-height: 100vh;
+        padding-top: 70px;
+        background-image: url("https://images.unsplash.com/photo-1458400411386-5ae465c4e57e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=47756f965e991bf72aa756b410929b04");
+        background-size: cover;
+    }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="50">
+    <!-- Section nav-bar -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="#myPage">Logo</a> -->
+                <img src="logo.gif" alt="logo" width="120" height="50">
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#myPage"></a>
+                    </li>
+                    <li><a class="page-scroll" href="#myPage">HOME</a></li>
+                    <li><a class="page-scroll" href="#about">ABOUT</a></li>
+                    <li><a class="page-scroll" href="#team1">TEAM</a></li>
+                    <li><a class="page-scroll" href="#contact">REQUEST DEMO</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Section carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="b1.jpeg" alt="s1" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h2>Smart Farms</h2>
+                    <p>Agriculture is important.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-caption">
+                    <h2>Smart Cities</h2>
+                    <p>Thank you, for smart cities!.</p>
+                </div>
+                <img src="b2.jpeg" alt="s2" width="1200" height="700">
+            </div>
+            <div class="item">
+                <div class="carousel-caption">
+                    <h2>Schools and Villages</h2>
+                    <p>Its all about learning!</p>
+                </div>
+                <img src="b3.jpeg" alt="s3" width="1200" height="700">
+            </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- About us -->
+    <div id="about" class="jumbotron" data-anchor="about">
+        <div class="container">
+            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+            <p>We are a complany who work and provide great functionality in the field of IoT, devices and Sensors. We like to work for the betterment of the society and make this place a better world. </p>
+            <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+        </div>
+    </div>
+    <!-- Core Team -->
+    <div id="team1" class="container c text-center" data-anchor="team1">
+        <h3>Core Team</h3>
+        <p><em>We like IoT</em></p>
+        <p>We are currently in steath mode.</p>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Meena Sankaran</strong></p>
+                <br>
+                <a href="#demo" data-toggle="collapse">
+                    <img src="person.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <div id="demo" class="collapse">
+                    <p>CEO</p>
+                    <p>Loves long walks on the beach</p>
+                    <p>Member since 1988</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Suresh Yanamadala</strong></p>
+                <br>
+                <a href="#demo2" data-toggle="collapse">
+                    <img src="person2.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <div id="demo2" class="collapse">
+                    <p>Designer</p>
+                    <p>Loves drummin'</p>
+                    <p>Member since 1988</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Mazhar Ali</strong></p>
+                <br>
+                <a href="#demo3" data-toggle="collapse">
+                    <img src="person3.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+                </a>
+                <div id="demo3" class="collapse">
+                    <p>Mentor</p>
+                    <p>Loves math</p>
+                    <p>Member since 2005</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <!-- Rest of the team -->
+    <div class="container-fluid team2" data-anchor="team2">
+        <div class="text-center">
+            <h2>Our Team</h2>
+            <h4>Know more about our team</h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Leadership</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Meena</strong> Sankaran</p>
+                        <p><strong>Suresh</strong> Yanamadala</p>
+                        <p><strong>Mazhar</strong> Ali</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Core Team</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p>Mechanical Design Engineer </p>
+                        <p>Electrical Design Engineer </p>
+                        <p>Manufacturing/Instrumentation Engineer </p>
+                        <p>Software - Web Analytics Developer </p>
+                        <p>Head of Customer Success </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h1>Research</h1>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Upmanu</strong> Lall</p>
+                        <p><strong>Laura</strong> Johnson</p>
+                        <p><strong>Raghu</strong> Nambiar</p>
+                        <p><strong>Anne</strong> Chahal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact/Request demo -->
+    <div id="contact" class="container-fluid contact" data-anchor="contact">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Get in Touch! <span class="text-muted">We have an awesome product!</span></h2>
+                <p class="lead">If you're adventurous enough and want to swim through risky terrains, contact us. </p>
+            </div>
+            <div class="col-md-14">
+                <form role="form" action="" method="post">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="InputName">Your Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputEmail">Your Email</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputMessage">Message</label>
+                            <div class="input-group">
+                                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="InputReal" id="InputReal" required>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
+                        </div>
+                        <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+                    </div>
+                </form>
+                <hr class="featurette-divider hidden-lg">
+                <div class="col-lg-5 col-md-push-1">
+                    <address>
+                        <h3>Office Location</h3>
+                        <p class="lead">
+                            <a href="#">
+                                <br> Santa Clara 95050</a>
+                            <br> Phone: 9030203030
+                            <br> Email: careers@ketos.co
+                            <br>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+    <!-- FOOTER -->
+    <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p> 2016 Ketos, Inc. <a href="#">Privacy</a> <a href="#">Terms</a></p>
+    </footer>
+    <script>
+    var header_height = $('.navbar').height(),
+        intro_height = $('.carousel slide').height(),
+        offset_val = intro_height + header_height;
+    $(window).scroll(function() {
+        var scroll_top = $(window).scrollTop();
+        if (scroll_top >= offset_val) {
+            $(".navbar-fixed-top").addClass("top-nav-collapse");
+            $(".navbar-fixed-top").removeClass("navbar-transparent");
+        } else {
+            $(".navbar-fixed-top").removeClass("top-nav-collapse");
+            $(".navbar-fixed-top").addClass("navbar-transparent");
+        }
+    });
+
+    $(document).ready(function() {
+        // Initialize Tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 1000, function() {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    })
+
+    $(function() {
+        $('a.page-scroll').bind('click', function(event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
+    });
+    </script>
+</body>
+
+</html>
